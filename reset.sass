@@ -77,12 +77,13 @@ body
   font-size: 20px
   line-height: 1.5
   letter-spacing: 0.8px
+.fz-24
+  font-size: 24px
 .fz-32
   font-size: 32px
   line-height: 1.5
   letter-spacing: 0.8px
-.fz-24
-  font-size: 24px
+
 .fz-64
   font-size: 64px
   font-weight: bold
@@ -184,3 +185,9 @@ $green3: #E1EDDF
         background: $green3
         &::before, &::after
           background: $green3
+.radius-block
+  +posCenter
+  background: $white
+  border-radius: 15px
+  width: 100%
+  overflow: hidden

@@ -51,20 +51,32 @@
         </div>
       </div>
       <div class="upload">
-        <div class="block">
+        <div class="process-block radius-block">
           <div class="exit"></div>
           <ul class="process fz-24">
             <li>上傳文件</li>
             <li>建立簽名檔</li>
             <li>簽署文件</li>
           </ul>
-          <div class="upload-btn top-btn fz-32">上傳PDF檔案</div>
+          <div class="upload-btn top-btn show-new-sign fz-32">上傳PDF檔案</div>
           <div class="upload-btn bottom-btn fz-32">拍照上傳文件</div>
         </div>
-      </div>
-      <div class="new-sign">
-        <p>新增新的簽名檔</p>
-        <div class="block"></div>
+        <div class="new-sign radius-block">
+          <p class="fz-20">新增新的簽名檔</p>
+          <div class="exit exit-sign"></div>
+          <div class="block fz-20">
+            <p>簽名檔名稱</p>
+            <input placeholder="請輸入此簽名檔名稱">
+            <div class="logo"><span>SIGN</span><span></span></div>
+            <div class="canvas-block">
+              <canvas id="canvas" width="500" height="250"></canvas><img class="show-img" alt="請於左邊空白處簽名" width="500" height="250">
+            </div>
+            <div class="btn-group">
+              <div class="save">SAVE</div>
+              <div class="clear">ClEAR</div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
@@ -75,4 +87,5 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathPlugin.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js"></script>
+<script defer src="canvas.js"></script>
 <script defer src="app.js"></script>

@@ -45,6 +45,11 @@ const signPaper = () => {
     onClick: () => signPaper.close()
   });
 
+  Observer.create({
+    target: '.exit-sign',
+    type: "pointer",
+    onClick: () => signPaper.exitNewSign()
+  });
   //第二步驟
   const $uploadBtn = gsap.utils.toArray(".upload-btn").forEach
   ((element) => {
@@ -54,8 +59,9 @@ const signPaper = () => {
       onClick: () => signPaper.secondStep()
     });
   })
-  
 
+  
+  
 }
 
 signPaper.open = () => {
@@ -77,7 +83,11 @@ signPaper.close = () => {
   
 }
 
+//第三步驟，開啟簽名區塊
+//等有show-new-sign才出現畫圖區塊
+
 signPaper.secondStep = () => {
+  $('.top-btn').addClass('show-new-sign')
   gsap.to('.top-btn',{
     text: '繪製新的簽名檔',
     duration: .5,
@@ -87,8 +97,39 @@ signPaper.secondStep = () => {
     duration: .5,
   })
   $('.upload .process').addClass('second-step')
+  setTimeout(() => {
+    signPaper.wait()
+  }, 100);
 }
 
+//等待抓到class
+signPaper.wait = () => {
+  Observer.create({
+    target: '.show-new-sign',
+    type: "pointer",
+    onClick: () => signPaper.showNewSign()
+  });
+}
 
+signPaper.showNewSign = () => {
+  $('.new-sign').addClass('active')
+  gsap.to('.new-sign',{
+    opacity: 1,
+    duration: .5,
+  })
+  
+}
+
+signPaper.exitNewSign = () => {
+  
+  gsap.to('.new-sign',{
+    opacity: 0,
+    duration: .5,
+  })
+  setTimeout(() => {
+    $('.new-sign').removeClass('active')
+  }, 500);
+  
+}
 bgFlow()
 signPaper()

@@ -143,13 +143,10 @@ main
   background: rgba($black, .6)
   &.active
     display: block
-  .block
+  .process-block
     padding: 90px 20px
-    +posCenter
-    background: $white
-    border-radius: 15px
+    top: 300px
     max-width: 890px
-    width: 100%
   .process
     margin: 0
     color: $black
@@ -197,3 +194,74 @@ main
     transform: rotate(45deg)
   &::after
     transform: rotate(-45deg)
+.new-sign
+  display: none
+  top: 42%
+  max-width: 1300px
+  opacity: 0
+  &.active
+    display: block
+  >p
+    padding: 10px 25px
+    font-weight: bold
+  .logo
+    position: absolute
+    z-index: -1
+    top: 330px
+    left: 300px
+    transform: rotate(90deg) scale(8.5)
+    opacity: .3
+  .exit-sign
+    top: 8px
+  .block
+    padding: 50px 140px
+    background: $green3
+    position: relative
+    z-index: 1
+    color: $white
+  input
+    margin-top: 20px
+    padding: 10px
+    border-radius: 15px
+    border: none
+  .canvas-block
+    margin-top: 60px
+    position: relative
+    display: flex
+    border: 10px solid $green2
+    background: $white
+    &::before
+      content: '繪製簽名檔'
+      position: absolute
+      padding: 10px
+      top: -50px
+      left: -10px
+      background: $green2
+      border-radius: 10px
+      font-size: px(24)
+      color: $white
+  .btn-group
+    margin: 30px auto 0 auto
+    width: 220px
+  .show-img
+    // position: absolute
+    // top: 0
+    // right: 0
+    max-width: 50%
+    background: $light-gray
+  .save, .clear
+    padding: 10px 0
+    display: inline-block
+    background: $green2
+    border-radius: 35px
+    width: 100px
+    text-align: center
+    color: $white
+    cursor: pointer
+    transition: background .6s
+    &:hover
+      background: $green1
+          
+    
+
+
