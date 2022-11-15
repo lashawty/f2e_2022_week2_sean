@@ -1,0 +1,182 @@
+*,*::before,*::after
+  box-sizing: border-box
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, tt, var,
+b, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section 
+  display: block
+
+body 
+  line-height: 1
+
+ol, ul 
+  list-style: none
+
+blockquote, q 
+  quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after 
+  content: ''
+  content: none
+
+table 
+  border-collapse: collapse
+  border-spacing: 0
+
+a
+  color: inherit
+  text-decoration: none
+
+img
+  display: block
+  width: 100%
+  height: auto
+
+input
+  &::-ms-clear,&::-ms-reveal
+    display: none
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active
+    transition: background-color 5000s ease-in-out 0s
+    -webkit-text-fill-color: #000000 !important
+  &[type='number']
+    -moz-appearance: textfield
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button
+      -webkit-appearance: none
+
+input,textarea
+  border-radius: 0
+
+
+//字級設定
+body
+  font-family: 'Secular One','Noto Sans TC', serif
+
+.fz-20
+  font-size: 20px
+  line-height: 1.5
+  letter-spacing: 0.8px
+.fz-24
+  font-size: 24px
+.fz-64
+  font-size: 64px
+  font-weight: bold
+  line-height: 1.5
+  letter-spacing: 0.8px
+
+h1
+  opacity: 0
+  position: absolute
+
+//mixin
+// absolute-center
+=posCenter
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+
+// 圖片防呆
+=lazyBox($ratio: 0)
+  position: relative
+  &::before
+    content:''
+    display: block
+    width: 100%
+    height: 0
+    padding-bottom: $ratio
+=lazyImg
+  +posCenter
+  width: 100%
+  height: 100%
+  object-fit: cover
+
+//變數
+$black: #000
+$dark-gray: #2A2A2A
+$gray: #6F6F6F
+$light-gray: #CFCFCF
+$white: #FFFDFD
+$green1: #BBE2B5
+$green2: #6C8268
+$green3: #E1EDDF
+
+//元件
+.logo
+  width: 100px
+  text-align: center
+  font-size: 30px
+  font-weight: bold
+  color: $black
+  letter-spacing: 1px
+  line-height: 1.5
+  >span
+    display: block
+    &:last-child
+      margin: 0 auto
+      position: relative
+      border-radius: 100%
+      background: $black
+      width: calc( 100% / 3 )
+      height: calc( 100px / 3 )
+      &::before, &::after
+        content: ''
+        position: absolute
+        top: 0
+        background: $black
+        border-radius: 100%
+        width: 100%
+        height: 100%
+      &::before
+        left: -80%
+      &::after
+        right: -80%
+  &.white
+    color: $white
+    >span
+      &:last-child
+        background: $white
+        &::before, &::after
+          background: $white
+  &.green1
+    color: $green1
+    >span
+      &:last-child
+        background: $green1
+        &::before, &::after
+          background: $green1
+  &.green2
+    color: $green2
+    >span
+      &:last-child
+        background: $green2
+        &::before, &::after
+          background: $green2
+  &.green3
+    color: $green3
+    >span
+      &:last-child
+        background: $green3
+        &::before, &::after
+          background: $green3
