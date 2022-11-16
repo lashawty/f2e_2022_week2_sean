@@ -1,4 +1,4 @@
-const canvas = document.querySelector("#canvas");
+const $canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 const clearBtn = document.querySelector(".clear");
 const saveBtn = document.querySelector(".save");
@@ -11,7 +11,7 @@ let isPainting = false;
 
 // 取得滑鼠 / 手指在畫布上的位置
 function getPaintPosition(e) {
-  const canvasSize = canvas.getBoundingClientRect();
+  const canvasSize = $canvas.getBoundingClientRect();
 
   if (e.type === "mousemove") {
     return {
@@ -53,20 +53,20 @@ function draw(e) {
 
 // 重新設定畫布
 function reset() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, $canvas.width, $canvas.height);
 }
 
 // event listener 電腦板
-canvas.addEventListener("mousedown", startPosition);
-canvas.addEventListener("mouseup", finishedPosition);
-canvas.addEventListener("mouseleave", finishedPosition);
-canvas.addEventListener("mousemove", draw);
+$canvas.addEventListener("mousedown", startPosition);
+$canvas.addEventListener("mouseup", finishedPosition);
+$canvas.addEventListener("mouseleave", finishedPosition);
+$canvas.addEventListener("mousemove", draw);
 
 // event listener 手機板
-canvas.addEventListener("touchstart", startPosition);
-canvas.addEventListener("touchend", finishedPosition);
-canvas.addEventListener("touchcancel", finishedPosition);
-canvas.addEventListener("touchmove", draw);
+$canvas.addEventListener("touchstart", startPosition);
+$canvas.addEventListener("touchend", finishedPosition);
+$canvas.addEventListener("touchcancel", finishedPosition);
+$canvas.addEventListener("touchmove", draw);
 
 clearBtn.addEventListener("click", reset);
 
@@ -79,21 +79,14 @@ clearBtn.addEventListener("click", reset);
 
 const showImage = document.querySelector(".show-img");
 
-function saveImage() {
-  // 圖片儲存的類型選擇 png ，並將值放入 img 的 src
-  const newImg = canvas.toDataURL("image/png");
-  showImage.src = newImg;
-}
-
 saveBtn.addEventListener("click", saveImage);
 
 //儲存圖片
 //有了圖片資料，現在可以透過 localStorage 將資料保存下來
-//如果還不知道 localStorage 是什麼，可以參考：[連結](https://5xruby.tw/posts/localstorage)
-//現在直接修改剛剛的函式，將拿到的檔案存起來：
+//可為圖片取名字，不輸入則為image
 
 function saveImage() {
   const newImg = canvas.toDataURL("image/png");
   showImage.src = newImg;
-  localStorage.setItem('img', newImg)
+  localStorage.setItem("image", newImg)
 }

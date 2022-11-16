@@ -25,6 +25,7 @@ main
   height: calc( 100vh - 130px )
   padding-top: 100px
   position: relative
+  overflow: hidden
 .content
   margin: 0 auto
   width: 100%
@@ -167,12 +168,13 @@ main
           &::before
             background: $green2
 .upload-btn
-  margin: 50px auto 0 auto
-  padding: 20px 65px
+  margin: 30px auto 0 auto
+  padding: 20px 40px
+  display: block
   color: $white
   background: $green2
   border-radius: 10px
-  max-width: 600px
+  max-width: 400px
   text-align: center
   cursor: pointer
 .exit
@@ -224,7 +226,7 @@ main
     padding: 10px
     border-radius: 15px
     border: none
-  .canvas-block
+  .canvas-sign
     margin-top: 60px
     position: relative
     display: flex
@@ -240,28 +242,64 @@ main
       border-radius: 10px
       font-size: px(24)
       color: $white
-  .btn-group
-    margin: 30px auto 0 auto
-    width: 220px
   .show-img
-    // position: absolute
-    // top: 0
-    // right: 0
     max-width: 50%
     background: $light-gray
-  .save, .clear
+  .btn-group
+    margin: 30px auto 0 auto
+    width: 320px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+  .save, .clear, .next-step
     padding: 10px 0
     display: inline-block
     background: $green2
     border-radius: 35px
-    width: 100px
+    width: 150px
     text-align: center
     color: $white
     cursor: pointer
     transition: background .6s
     &:hover
       background: $green1
-          
-    
+  .next-step
+    width: 100%
+    margin-top: 20px
+.pdf-block
+  display: none
+  opacity: 0
+  width: 90vw
+  height: 95%
+  border: 10px solid $green1
+  background: #fff
+  +posCenter
+  &.active
+    display: block
 
 
+//PDF頁面
+.pdf-page
+  // margin-top: -100px
+  padding: 0 50px
+  height: 100%
+
+.select-pdf
+  margin: 0
+input[type="file"]
+  position: absolute
+  padding: 0
+  border: 0
+  height: 1px
+  width: 1px
+.canvas-pdf
+  padding: 0 150px
+  display: flex
+  justify-content: space-between
+  gap: 30px
+  .sign
+    margin-top: 30px
+    width: 500px
+    height: 250px
+.canvas-container
+  transform: scale(.8)  translateY(-100px)

@@ -18,27 +18,13 @@ html(lang="en")
       a(href="index.html").logo
         span SIGN
         span
-      ul.nav-right.fz-20
-        li
-          a(href="javascript:;") 服務介紹
-        li 
-          a.sign-btn(href="javascript:;") 簽署文件
-        li 
-          a(href="javascript:;") 註冊
-        li 
-          a(href="javascript:;") 登入
+      label.upload-btn.fz-32.select-pdf(for="upload-pdf") 選擇PDF檔案 
+      input(id="upload-pdf" type="file" accept="application/pdf" placeholder="選擇PDF檔案")
+      .upload-btn.fz-32.select-pdf.download 點此下載
     main
-      //首頁
-      .content
-        .main-title
-          p.fz-64 隨時隨地都能簽，<br \>SIGNooo幫你省下大筆時間！
-        ul.process.fz-24
-          li 建立簽名檔
-          li 上傳文件
-          li 簽署文件
-        .sign-now
-          p.fz-20 只需三步驟，立即簽署您的文件！
-          .sign-btn.button.fz-24 SIGN NOOOW
+
+      .pdf-page
+
         .flow-bg
           .logo.green3.flow-logo
             span SIGN
@@ -56,42 +42,12 @@ html(lang="en")
           p.letter.fz-64 I
           p.letter.fz-64 G
           p.letter.fz-64 N
-      
-      //上傳區塊
-      .upload
-
-        //第一步 選擇檔案
-        .process-block.radius-block
-          .exit
-          ul.process.fz-24
-            li 建立簽名檔
-            li 上傳文件
-            li 簽署文件
-          
-          .upload-btn.fz-32(for="upload-pdf") 建立簽名檔
-
-        //第二步 建立簽名  
-        .new-sign.radius-block
-          p.fz-20 新增新的簽名檔
-          .exit.exit-sign
-          .block.fz-20
-            .logo
-              span SIGN
-              span
-            .canvas-sign
-              canvas(id="canvas" width="500" height="250" )
-              img.show-img(alt="請於左邊空白處簽名" width="500" height="250")
-            .btn-group
-              .save 新增簽名
-              .clear 清除簽名
-              a(href="pdf.html").next-step 上傳PDF
         
-          
+        //上傳PDF
         
-
-
-
-
+        .canvas-pdf
+          canvas(id="canvas" style="")
+          img.sign
 
 
 
@@ -105,6 +61,6 @@ script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/MotionPathP
 script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.min.js')
 script(defer src="https://unpkg.com/fabric@latest/dist/fabric.js")
 script(defer src="https://mozilla.github.io/pdf.js/build/pdf.js")
-script(defer src="canvas.js")
-//- script(defer src="pdf.js")
+script(defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js")
+script(defer src="pdf.js")
 script(defer src="app.js")
