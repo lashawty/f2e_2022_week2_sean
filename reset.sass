@@ -136,6 +136,18 @@ $green3: #E1EDDF
   color: $black
   letter-spacing: 1px
   line-height: 1.5
+  transition: color .6s
+  &:hover
+    color: $green2
+    >span
+      &:last-child
+        background: $green2
+        &::before
+          background: $green1
+          transform: translateX(-5px)
+        &::after
+          background: $green3
+          transform: translateX(5px)
   >span
     display: block
     &:last-child
@@ -145,6 +157,7 @@ $green3: #E1EDDF
       background: $black
       width: calc( 100% / 3 )
       height: calc( 100px / 3 )
+      transition: background .6s
       &::before, &::after
         content: ''
         position: absolute
@@ -153,6 +166,7 @@ $green3: #E1EDDF
         border-radius: 100%
         width: 100%
         height: 100%
+        transition: all .6s
       &::before
         left: -80%
       &::after
@@ -185,6 +199,7 @@ $green3: #E1EDDF
         background: $green3
         &::before, &::after
           background: $green3
+
 .radius-block
   +posCenter
   background: $white

@@ -3,12 +3,12 @@
 
 //導覽列
 nav
-  padding: 25px
+  padding: 10px 20px
   display: flex
   justify-content: space-between
   align-items: center
   background: $light-gray
-  height: 130px
+  height: 100px
   .nav-right
     display: flex
     align-items: center
@@ -18,11 +18,14 @@ nav
       background: $black
       border-radius: 4px
       color: $white
+      transition: background .6s
+      &:hover
+        background: $green2
 
 //內文
 main
   background: $dark-gray
-  height: calc( 100vh - 130px )
+  height: calc( 100vh - 100px )
   padding-top: 100px
   position: relative
   overflow: hidden
@@ -77,6 +80,10 @@ main
     color: $black
     font-weight: bold
     cursor: pointer
+    transition: all .6s
+    &:hover
+      color: $white
+      background: $green2
 .flow-bg
   position: absolute
   overflow: hidden
@@ -177,6 +184,11 @@ main
   max-width: 400px
   text-align: center
   cursor: pointer
+  transition: all .6s
+  &:hover
+    background: $green3
+    color: $dark-gray
+
 .exit
   position: absolute
   top: 20px
@@ -280,12 +292,11 @@ main
 
 //PDF頁面
 .pdf-page
-  // margin-top: -100px
   padding: 0 50px
   height: 100%
-
 .select-pdf
   margin: 0
+  padding: 15px 30px
 input[type="file"]
   position: absolute
   padding: 0
@@ -294,12 +305,30 @@ input[type="file"]
   width: 1px
 .canvas-pdf
   padding: 0 150px
+  position: relative
   display: flex
   justify-content: space-between
   gap: 30px
   .sign
     margin-top: 30px
-    width: 500px
-    height: 250px
+    width: 700px
+    height: 350px
+    border: 10px solid $green2
+    border-radius: 10px
+    cursor: pointer
+    transition: background .6s
+    &:hover
+      background: rgba($light-gray,.3)
 .canvas-container
-  transform: scale(.8)  translateY(-100px)
+  z-index: 1
+.your-pic
+  top: 500px
+  right: 330px
+  opacity: 0.3
+  color: $green1
+.your-file
+  top: 500px
+  left: 330px
+  opacity: 0.3
+  color: $green1
+  z-index: 0

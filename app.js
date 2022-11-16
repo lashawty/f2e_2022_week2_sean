@@ -15,7 +15,6 @@ const bgFlow = function () {
   })
   gsap.to(".flow-logo", {
     position: 'absolute',
-    // top: '10',
     xPercent: "100", 
     scale:'2',
     rotate: '360deg',
@@ -24,6 +23,22 @@ const bgFlow = function () {
     repeat: -1,
     yoyo: true,
   });
+  gsap.to('.your-pic', {
+    position: 'absolute',
+    ease: 'none',
+    opacity:1.9,
+    duration:1,
+    repeat:-1,
+    yoyo: true,
+  })
+  gsap.to('.your-file', {
+    position: 'absolute',
+    ease: 'none',
+    opacity:1.9,
+    duration:1,
+    repeat:-1,
+    yoyo: true,
+  })
 }
 
 //第一步驟，簽名區塊開啟

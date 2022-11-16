@@ -18,13 +18,12 @@ html(lang="en")
       a(href="index.html").logo
         span SIGN
         span
-      label.upload-btn.fz-32.select-pdf(for="upload-pdf") 選擇PDF檔案 
-      input(id="upload-pdf" type="file" accept="application/pdf" placeholder="選擇PDF檔案")
-      .upload-btn.fz-32.select-pdf.download 點此下載
+      .nav-right
+        label.upload-btn.fz-32.select-pdf(for="upload-pdf") 選擇PDF檔案 
+        input(id="upload-pdf" type="file" accept="application/pdf" placeholder="選擇PDF檔案")
+        .upload-btn.fz-32.select-pdf.download 點此下載
     main
-
       .pdf-page
-
         .flow-bg
           .logo.green3.flow-logo
             span SIGN
@@ -44,11 +43,12 @@ html(lang="en")
           p.letter.fz-64 N
         
         //上傳PDF
-        
         .canvas-pdf
           canvas(id="canvas" style="")
           img.sign
-
+      p.your-pic.fz-64 SIGNATURE
+      p.your-file.fz-64 PDF FILE
+        
 
 
 
