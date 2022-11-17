@@ -1,5 +1,5 @@
 doctype html
-html(lang="en")
+html(lang="zh-TW")
   head
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -67,8 +67,7 @@ html(lang="en")
             li 建立簽名檔
             li 上傳文件
             li 簽署文件
-          
-          .upload-btn.fz-32(for="upload-pdf") 建立簽名檔
+          .upload-btn.fz-32 建立簽名檔
 
         //第二步 建立簽名  
         .new-sign.radius-block
@@ -80,21 +79,11 @@ html(lang="en")
               span
             .canvas-sign
               canvas(id="canvas" width="500" height="250" )
-              img.show-img(alt="請於左邊空白處簽名" width="500" height="250")
+              img.show-img(alt="" width="500" height="250")
             .btn-group
               .save 新增簽名
               .clear 清除簽名
-              a(href="pdf.html").next-step 上傳PDF
-        
-          
-        
-
-
-
-
-
-
-
+              a(href="pdf.html").next-step 確認簽名 前往上傳PDF
 
 script(defer src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 crossorigin="anonymous")
@@ -106,5 +95,4 @@ script(defer src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/TextPlugin.
 script(defer src="https://unpkg.com/fabric@latest/dist/fabric.js")
 script(defer src="https://mozilla.github.io/pdf.js/build/pdf.js")
 script(defer src="canvas.js")
-//- script(defer src="pdf.js")
 script(defer src="app.js")

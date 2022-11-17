@@ -154,6 +154,7 @@ main
   .process-block
     padding: 90px 20px
     top: 300px
+    border: 10px solid $light-gray
     max-width: 890px
   .process
     margin: 0
@@ -188,7 +189,6 @@ main
   &:hover
     background: $green3
     color: $dark-gray
-
 .exit
   position: absolute
   top: 20px
@@ -223,6 +223,7 @@ main
     z-index: -1
     top: 330px
     left: 300px
+    pointer-events: none
     transform: rotate(90deg) scale(8.5)
     opacity: .3
   .exit-sign
@@ -245,7 +246,7 @@ main
     border: 10px solid $green2
     background: $white
     &::before
-      content: '繪製簽名檔'
+      content: '請於空白處繪製簽名檔'
       position: absolute
       padding: 10px
       top: -50px
@@ -254,9 +255,18 @@ main
       border-radius: 10px
       font-size: px(24)
       color: $white
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 480px
+      background: $light-gray
+      width: 20px
+      height: 20px
   .show-img
     max-width: 50%
     background: $light-gray
+    font-size: px(12)
   .btn-group
     margin: 30px auto 0 auto
     width: 320px
@@ -304,7 +314,6 @@ input[type="file"]
   height: 1px
   width: 1px
 .canvas-pdf
-  padding: 0 150px
   position: relative
   display: flex
   justify-content: space-between
@@ -320,10 +329,11 @@ input[type="file"]
     &:hover
       background: rgba($light-gray,.3)
 .canvas-container
+  margin: 0 auto
   z-index: 1
 .your-pic
   top: 500px
-  right: 330px
+  right: 230px
   opacity: 0.3
   color: $green1
 .your-file

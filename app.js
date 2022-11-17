@@ -41,10 +41,11 @@ const bgFlow = function () {
   })
 }
 
-//第一步驟，簽名區塊開啟
-const signPaper = () => {
 
-  //開啟 
+//簽名區塊
+const signPaper = () => {
+  //第一步驟，簽名區塊開啟
+  //開啟建立簽名檔 
   const $signBtn = gsap.utils.toArray(".sign-btn").forEach((element) => {
     Observer.create({
       target:  element,
@@ -53,20 +54,21 @@ const signPaper = () => {
     });
   })
 
-  //關閉
+  //關閉建立簽名檔 
   Observer.create({
     target: '.exit',
     type: "pointer",
     onClick: () => signPaper.close()
   });
 
+  //關閉簽名區塊
   Observer.create({
     target: '.exit-sign',
     type: "pointer",
     onClick: () => signPaper.exitNewSign()
   });
 
-  //第二步驟 選擇PDF檔案
+  //第二步驟 建立簽名檔
   const $uploadBtn = gsap.utils.toArray(".upload-btn").forEach
   ((element) => {
     Observer.create({
@@ -98,7 +100,6 @@ signPaper.close = () => {
   
 }
 
-//第二步驟，出現簽名區塊
 signPaper.secondStep = () => {
   $('.top-btn').addClass('show-new-sign')
   $('.upload .process').addClass('second-step')
@@ -112,17 +113,8 @@ signPaper.showNewSign = () => {
     duration: .5,
   })
 
-  //第四步驟 顯示pdf
-  setTimeout(() => {
-    Observer.create({
-      target: '.next-step',
-      type: "pointer",
-      onClick: () => signPaper.showPDF()
-    });
-  }, 100);
 }
 
-//關閉視窗
 signPaper.exitNewSign = () => {
   
   gsap.to('.new-sign',{
@@ -135,8 +127,6 @@ signPaper.exitNewSign = () => {
   
 }
 
-//上傳圖片樣式
-
-
+//執行
 bgFlow()
 signPaper()
