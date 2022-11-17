@@ -72,7 +72,6 @@ document.querySelector("input").addEventListener("change", async (e) => {
 
 //先新增 img 標籤，並透過 JS 讓簽名可以顯示出來
 const sign = document.querySelector(".sign");
-console.log(sign);
 // 若 localStorage 有資料才放入
 if (localStorage.getItem("image")) {
   sign.src = localStorage.getItem("image");
